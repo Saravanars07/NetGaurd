@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NetGuard · Network Support</title>
+  <title>NetGuard · Professional Network Support</title>
+  <!--Favicon Logo-->
+  <link rel="icon" href="/Img/Favicon1.png" type="image/x-icon">
   <!-- Font Awesome Icons (Free) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <!-- Google Fonts: Inter -->
@@ -26,6 +28,233 @@
       background-color: #f8fafc;
       color: #0b1a2b;
       line-height: 1.6;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    /* Dark Mode */
+    body.dark-mode {
+      background-color: #0b1a2b;
+      color: #e8edf2;
+    }
+
+    body.dark-mode .navbar {
+      background: rgba(11, 26, 43, 0.95);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    body.dark-mode .logo {
+      color: #e8edf2;
+    }
+
+    body.dark-mode .nav-links a {
+      color: #b0c4d8;
+    }
+
+    body.dark-mode .nav-links a:hover {
+      color: #4c9aff;
+    }
+
+    body.dark-mode .btn-outline {
+      border-color: #4c9aff;
+      color: #4c9aff;
+    }
+
+    body.dark-mode .btn-outline:hover {
+      background: #4c9aff;
+      color: #0b1a2b;
+    }
+
+    body.dark-mode .hero-visual {
+      background: linear-gradient(145deg, #122437, #0b1a2b);
+      border-color: rgba(76, 154, 255, 0.15);
+    }
+
+    body.dark-mode .hero-visual h4 {
+      color: #e8edf2;
+    }
+
+    body.dark-mode .hero-visual p,
+    body.dark-mode .hero-content p {
+      color: #b0c4d8;
+    }
+
+    body.dark-mode .service-card,
+    body.dark-mode .feature-item,
+    body.dark-mode .testimonial-box,
+    body.dark-mode .form-main,
+    body.dark-mode .info-card {
+      background: #122437;
+      border-color: rgba(255, 255, 255, 0.06);
+      color: #e8edf2;
+    }
+
+    body.dark-mode .service-card h3,
+    body.dark-mode .feature-item h4,
+    body.dark-mode .testimonial-box blockquote,
+    body.dark-mode .form-main h2,
+    body.dark-mode .info-card h4,
+    body.dark-mode .client-info p {
+      color: #e8edf2;
+    }
+
+    body.dark-mode .service-card p,
+    body.dark-mode .feature-item p,
+    body.dark-mode .info-card p,
+    body.dark-mode .client-info span {
+      color: #b0c4d8;
+    }
+
+    body.dark-mode .service-icon {
+      background: #1a2f4a;
+    }
+
+    body.dark-mode .section-title h2 {
+      color: #e8edf2;
+    }
+
+    body.dark-mode .section-title p {
+      color: #b0c4d8;
+    }
+
+    body.dark-mode .stat-item h3 {
+      color: #e8edf2;
+    }
+
+    body.dark-mode .stat-item p {
+      color: #b0c4d8;
+    }
+
+    body.dark-mode .cta-section {
+      background: #0d1f33;
+    }
+
+    body.dark-mode .cta-section h2 {
+      color: #e8edf2;
+    }
+
+    body.dark-mode .cta-section p {
+      color: #b0c4d8;
+    }
+
+    body.dark-mode .cta-btn {
+      background: #4c9aff;
+      color: #0b1a2b;
+    }
+
+    body.dark-mode .cta-btn i {
+      color: #0b1a2b;
+    }
+
+    body.dark-mode .cta-btn:hover {
+      background: #6aadff;
+    }
+
+    body.dark-mode .footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    body.dark-mode .footer-col p,
+    body.dark-mode .footer-col a {
+      color: #b0c4d8;
+    }
+
+    body.dark-mode .footer-col a:hover {
+      color: #4c9aff;
+    }
+
+    body.dark-mode .footer-social i {
+      color: #b0c4d8;
+    }
+
+    body.dark-mode .footer-social i:hover {
+      color: #4c9aff;
+    }
+
+    body.dark-mode .footer-copy {
+      color: #7a8fa5;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    body.dark-mode .hero-badge {
+      background: #1a2f4a;
+      color: #4c9aff;
+    }
+
+    body.dark-mode .form-group input,
+    body.dark-mode .form-group select,
+    body.dark-mode .form-group textarea {
+      background: #0d1f33;
+      border-color: #1a2f4a;
+      color: #e8edf2;
+    }
+
+    body.dark-mode .form-group input::placeholder,
+    body.dark-mode .form-group textarea::placeholder {
+      color: #7a8fa5;
+    }
+
+    body.dark-mode .form-group input:focus,
+    body.dark-mode .form-group select:focus,
+    body.dark-mode .form-group textarea:focus {
+      border-color: #4c9aff;
+      box-shadow: 0 0 0 4px rgba(76, 154, 255, 0.15);
+    }
+
+    body.dark-mode .info-card.blue-card {
+      background: #0d1f33;
+      border-color: #1a2f4a;
+    }
+
+    body.dark-mode .info-card.blue-card h4 {
+      color: #e8edf2 !important;
+    }
+
+    body.dark-mode .badge-pill {
+      background: #1a2f4a;
+      color: #4c9aff;
+    }
+
+    body.dark-mode .client-avatar {
+      background: #1a2f4a;
+      border-color: #1a2f4a;
+      color: #4c9aff;
+    }
+
+    body.dark-mode .breadcrumb {
+      color: #7a8fa5;
+    }
+
+    body.dark-mode .breadcrumb span {
+      color: #b0c4d8 !important;
+    }
+
+    body.dark-mode .page-header h1 {
+      color: #e8edf2;
+    }
+
+    body.dark-mode .page-header p {
+      color: #b0c4d8;
+    }
+
+    body.dark-mode .form-main .sub {
+      color: #b0c4d8;
+    }
+
+    body.dark-mode .form-group label {
+      color: #e8edf2;
+    }
+
+    body.dark-mode .info-card .contact-line {
+      color: #e8edf2;
+    }
+
+    body.dark-mode .toast-message {
+      background: #1a2f4a;
+      color: #e8edf2;
+    }
+
+    body.dark-mode .scroll-indicator {
+      color: #4c9aff !important;
     }
 
     .container {
@@ -48,6 +277,7 @@
       background: rgba(248, 250, 252, 0.92);
       backdrop-filter: blur(8px);
       z-index: 100;
+      transition: background-color 0.3s ease, border-color 0.3s ease;
     }
 
     .logo {
@@ -60,6 +290,7 @@
       cursor: pointer;
       text-decoration: none;
       color: #0b1a2b;
+      transition: color 0.3s ease;
     }
 
     .logo i {
@@ -103,12 +334,9 @@
       width: 100%;
     }
 
-    /* Home link - hidden by default on home page, shown on consultation page */
+    /* Home link - removed from consultation page, only shown when needed */
     .nav-home-link {
       display: none;
-    }
-    .nav-home-link.visible {
-      display: inline-block;
     }
 
     .btn-outline {
@@ -127,6 +355,36 @@
     .btn-outline:hover {
       background: #0066ff;
       color: white;
+    }
+
+    /* Dark mode toggle button */
+    .theme-toggle {
+      background: none;
+      border: none;
+      font-size: 1.3rem;
+      cursor: pointer;
+      color: #1e2f40;
+      transition: color 0.2s, transform 0.3s ease;
+      padding: 0.3rem 0.5rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+    }
+
+    body.dark-mode .theme-toggle {
+      color: #b0c4d8;
+    }
+
+    .theme-toggle:hover {
+      transform: rotate(20deg);
+      color: #0066ff;
+    }
+
+    body.dark-mode .theme-toggle:hover {
+      color: #4c9aff;
     }
 
     /* Section IDs for scrolling */
@@ -170,6 +428,7 @@
       font-size: 0.8rem;
       letter-spacing: 0.3px;
       margin-bottom: 1.2rem;
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
 
     .hero-content h1 {
@@ -189,6 +448,7 @@
       color: #2c4058;
       max-width: 500px;
       margin-bottom: 2rem;
+      transition: color 0.3s ease;
     }
 
     .hero-actions {
@@ -235,11 +495,13 @@
       font-size: 1.8rem;
       font-weight: 700;
       color: #0b1a2b;
+      transition: color 0.3s ease;
     }
 
     .stat-item p {
       font-size: 0.9rem;
       color: #4a5e72;
+      transition: color 0.3s ease;
     }
 
     .hero-visual {
@@ -250,6 +512,7 @@
       box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08);
       text-align: center;
       border: 1px solid rgba(0, 102, 255, 0.05);
+      transition: background-color 0.3s ease, border-color 0.3s ease;
     }
 
     .hero-visual i {
@@ -263,11 +526,13 @@
       font-weight: 600;
       font-size: 1.3rem;
       color: #0b1a2b;
+      transition: color 0.3s ease;
     }
 
     .hero-visual p {
       color: #3e5770;
       font-size: 0.95rem;
+      transition: color 0.3s ease;
     }
 
     .section-title {
@@ -279,12 +544,14 @@
       font-size: 2.5rem;
       font-weight: 700;
       letter-spacing: -0.02em;
+      transition: color 0.3s ease;
     }
 
     .section-title p {
       color: #3e5770;
       max-width: 540px;
       margin: 0.5rem auto 0;
+      transition: color 0.3s ease;
     }
 
     .services-grid {
@@ -299,7 +566,7 @@
       padding: 2rem 1.8rem;
       border-radius: 32px;
       box-shadow: 0 8px 28px rgba(0, 20, 40, 0.03);
-      transition: 0.25s ease;
+      transition: 0.25s ease, background-color 0.3s ease, border-color 0.3s ease;
       border: 1px solid rgba(0, 0, 0, 0.02);
       text-align: center;
       cursor: pointer;
@@ -322,17 +589,20 @@
       margin: 0 auto 1.5rem;
       color: #0066ff;
       font-size: 2rem;
+      transition: background-color 0.3s ease;
     }
 
     .service-card h3 {
       font-weight: 700;
       font-size: 1.3rem;
       margin-bottom: 0.5rem;
+      transition: color 0.3s ease;
     }
 
     .service-card p {
       color: #3e5770;
       font-size: 0.95rem;
+      transition: color 0.3s ease;
     }
 
     .features-grid {
@@ -352,6 +622,7 @@
       box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
       border: 1px solid #f0f4fe;
       cursor: pointer;
+      transition: background-color 0.3s ease, border-color 0.3s ease;
     }
 
     .feature-item i {
@@ -364,11 +635,13 @@
       font-weight: 700;
       font-size: 1.1rem;
       margin-bottom: 0.2rem;
+      transition: color 0.3s ease;
     }
 
     .feature-item p {
       color: #3e5770;
       font-size: 0.9rem;
+      transition: color 0.3s ease;
     }
 
     .testimonial-box {
@@ -383,6 +656,7 @@
       align-items: center;
       justify-content: space-between;
       gap: 2rem;
+      transition: background-color 0.3s ease, border-color 0.3s ease;
     }
 
     .testimonial-box blockquote {
@@ -390,6 +664,7 @@
       font-weight: 500;
       max-width: 600px;
       color: #0b1a2b;
+      transition: color 0.3s ease;
     }
 
     .testimonial-box blockquote i {
@@ -411,15 +686,18 @@
       font-weight: 600;
       color: #0066ff;
       border: 1px solid #dbe8ff;
+      transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
     }
 
     .client-info p {
       font-weight: 500;
+      transition: color 0.3s ease;
     }
 
     .client-info span {
       color: #4a5e72;
       font-size: 0.9rem;
+      transition: color 0.3s ease;
     }
 
     .cta-section {
@@ -433,18 +711,21 @@
       align-items: center;
       justify-content: space-between;
       gap: 2rem;
+      transition: background-color 0.3s ease;
     }
 
     .cta-section h2 {
       font-size: 2.2rem;
       font-weight: 700;
       letter-spacing: -0.02em;
+      transition: color 0.3s ease;
     }
 
     .cta-section p {
       opacity: 0.7;
       max-width: 440px;
       margin-top: 0.5rem;
+      transition: color 0.3s ease;
     }
 
     .cta-btn {
@@ -483,12 +764,14 @@
       font-weight: 700;
       letter-spacing: -0.02em;
       margin-bottom: 0.5rem;
+      transition: color 0.3s ease;
     }
 
     .page-header p {
       font-size: 1.15rem;
       color: #2c4058;
       max-width: 600px;
+      transition: color 0.3s ease;
     }
 
     .breadcrumb {
@@ -497,6 +780,7 @@
       color: #4a5e72;
       font-size: 0.9rem;
       margin-bottom: 0.8rem;
+      transition: color 0.3s ease;
     }
 
     .breadcrumb a {
@@ -523,17 +807,20 @@
       border-radius: 40px;
       box-shadow: 0 12px 40px rgba(0, 0, 0, 0.02);
       border: 1px solid #eef4fe;
+      transition: background-color 0.3s ease, border-color 0.3s ease;
     }
 
     .form-main h2 {
       font-size: 1.6rem;
       font-weight: 700;
       margin-bottom: 0.3rem;
+      transition: color 0.3s ease;
     }
 
     .form-main .sub {
       color: #4a5e72;
       margin-bottom: 2rem;
+      transition: color 0.3s ease;
     }
 
     .form-group {
@@ -546,6 +833,7 @@
       font-size: 0.9rem;
       margin-bottom: 0.4rem;
       color: #0b1a2b;
+      transition: color 0.3s ease;
     }
 
     .form-group label .required {
@@ -562,7 +850,7 @@
       border-radius: 30px;
       font-family: "Inter", sans-serif;
       font-size: 1rem;
-      transition: 0.2s;
+      transition: 0.2s, background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
       background: #fafcff;
       color: #0b1a2b;
     }
@@ -604,6 +892,7 @@
       border-radius: 32px;
       border: 1px solid #eef4fe;
       box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
+      transition: background-color 0.3s ease, border-color 0.3s ease;
     }
 
     .info-card h4 {
@@ -613,6 +902,7 @@
       display: flex;
       align-items: center;
       gap: 0.6rem;
+      transition: color 0.3s ease;
     }
 
     .info-card h4 i {
@@ -623,6 +913,7 @@
       color: #3e5770;
       font-size: 0.95rem;
       margin-bottom: 0.5rem;
+      transition: color 0.3s ease;
     }
 
     .info-card .contact-line {
@@ -632,6 +923,7 @@
       color: #0b1a2b;
       font-weight: 500;
       margin-top: 0.6rem;
+      transition: color 0.3s ease;
     }
 
     .info-card .contact-line i {
@@ -647,6 +939,7 @@
       font-size: 0.8rem;
       font-weight: 600;
       display: inline-block;
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
 
     /* footer */
@@ -658,6 +951,7 @@
       border-top: 1px solid rgba(0, 0, 0, 0.04);
       margin-top: 2rem;
       gap: 2rem;
+      transition: border-color 0.3s ease;
     }
 
     .footer-col {
@@ -695,6 +989,7 @@
       font-size: 0.85rem;
       color: #4a5e72;
       border-top: 1px solid rgba(0,0,0,0.03);
+      transition: color 0.3s ease, border-color 0.3s ease;
     }
 
     .toast-message {
@@ -709,7 +1004,7 @@
       font-weight: 500;
       box-shadow: 0 12px 30px rgba(0,0,0,0.2);
       opacity: 0;
-      transition: 0.3s ease;
+      transition: 0.3s ease, background-color 0.3s ease, color 0.3s ease;
       pointer-events: none;
       z-index: 999;
       font-size: 0.95rem;
@@ -734,6 +1029,8 @@
     .scroll-indicator {
       display: inline-block;
       animation: bounce 2s infinite;
+      color: #0066ff;
+      font-size: 0.8rem;
     }
 
     @keyframes bounce {
@@ -770,13 +1067,14 @@
         <span>NetGuard</span>
       </a>
       <div class="nav-links">
-        <!-- Home link - hidden on home page, shown on consultation page -->
-        <a class="nav-home-link" onclick="showPage('home')"><i class="fas fa-home"></i> Home</a>
         <a href="#home-section" onclick="smoothScroll('home-section')">Home</a>
         <a href="#services-section" onclick="smoothScroll('services-section')">Services</a>
         <a href="#features-section" onclick="smoothScroll('features-section')">Features</a>
         <a href="#testimonial-section" onclick="smoothScroll('testimonial-section')">Testimonials</a>
         <a href="#cta-section" onclick="smoothScroll('cta-section')">Contact</a>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
+          <i class="fas fa-moon" id="themeIcon"></i>
+        </button>
         <span class="btn-outline" onclick="showToast('📞 24/7 Help desk')"><i class="fas fa-headset"></i> 24/7 Help</span>
       </div>
     </nav>
@@ -787,7 +1085,7 @@
         <div class="hero-content">
           <span class="hero-badge"><i class="fas fa-circle-check"></i> Trusted network partner</span>
           <h1>Enterprise–grade <span>Network Support</span> for modern teams</h1>
-          <p>Proactive monitoring, rapid incident response, and expert guidance — keep your infrastructure always online.</p>
+          <p>Proactive monitoring, rapid incident response, and expert guidance — keep your infrastructure always online with our 24/7 dedicated support team.</p>
           <div class="hero-actions">
             <span class="btn-primary" onclick="showToast('🚀 Getting started with NetGuard')"><i class="fas fa-arrow-right"></i> Get started</span>
             <span style="display: flex; align-items: center; gap: 0.5rem; font-weight: 500; color: #0b1a2b; cursor: pointer;" onclick="showToast('▶️ Watch demo video')">
@@ -809,61 +1107,92 @@
             <span><i class="fas fa-check-circle"></i> Security</span>
           </div>
           <div style="margin-top: 1.5rem;">
-            <span class="scroll-indicator" style="color: #0066ff; font-size: 0.8rem;">
+            <span class="scroll-indicator">
               <i class="fas fa-chevron-down"></i> Scroll to explore
             </span>
           </div>
         </div>
       </section>
 
-      <div id="services-section" class="section-title"><h2>Core support services</h2><p>From routine maintenance to emergency response — we cover every layer.</p></div>
+      <div id="services-section" class="section-title">
+        <h2>Comprehensive Network Support Services</h2>
+        <p>From routine maintenance to emergency response — we cover every layer of your network infrastructure with enterprise-grade expertise.</p>
+      </div>
       <div class="services-grid">
         <div class="service-card" onclick="showToast('📡 Network monitoring details')">
           <div class="service-icon"><i class="fas fa-satellite-dish"></i></div>
-          <h3>Network monitoring</h3><p>Real–time visibility, predictive alerts, and performance dashboards.</p>
+          <h3>Network Monitoring</h3>
+          <p>Real–time visibility, predictive alerts, and performance dashboards. We monitor your network 24/7 to detect and resolve issues before they impact your business.</p>
         </div>
         <div class="service-card" onclick="showToast('🛡️ Security & firewall services')">
           <div class="service-icon"><i class="fas fa-shield"></i></div>
-          <h3>Security & firewall</h3><p>Threat prevention, VPN management, and zero–trust policies.</p>
+          <h3>Security & Firewall</h3>
+          <p>Threat prevention, VPN management, and zero–trust policies. Our security experts protect your data with advanced firewall configurations and continuous threat monitoring.</p>
         </div>
         <div class="service-card" onclick="showToast('☁️ Cloud & hybrid solutions')">
           <div class="service-icon"><i class="fas fa-cloud-upload-alt"></i></div>
-          <h3>Cloud & hybrid</h3><p>AWS, Azure, GCP integration with seamless hybrid connectivity.</p>
+          <h3>Cloud & Hybrid</h3>
+          <p>AWS, Azure, GCP integration with seamless hybrid connectivity. We help you build and manage cloud infrastructure that scales with your business needs.</p>
         </div>
         <div class="service-card" onclick="showToast('🎧 24/7 helpdesk support')">
           <div class="service-icon"><i class="fas fa-headset"></i></div>
-          <h3>24/7 helpdesk</h3><p>Multi–tier support with quick escalation and expert engineers.</p>
+          <h3>24/7 Helpdesk</h3>
+          <p>Multi–tier support with quick escalation and expert engineers. Our helpdesk team is available around the clock to resolve any network issues you encounter.</p>
         </div>
       </div>
 
-      <div id="features-section" class="section-title"><h2>Built for reliability</h2><p>We combine deep expertise with a customer–first approach.</p></div>
+      <div id="features-section" class="section-title">
+        <h2>Built for Enterprise Reliability</h2>
+        <p>We combine deep technical expertise with a customer–first approach to deliver exceptional network support services.</p>
+      </div>
       <div class="features-grid">
         <div class="feature-item" onclick="showToast('⚡ Rapid response: < 5 min')">
-          <i class="fas fa-clock"></i><div><h4>Rapid response</h4><p>Average time to acknowledge &lt; 5 minutes.</p></div>
+          <i class="fas fa-clock"></i>
+          <div>
+            <h4>Rapid Response</h4>
+            <p>Average time to acknowledge &lt; 5 minutes. Our team is always ready to address your network issues immediately.</p>
+          </div>
         </div>
         <div class="feature-item" onclick="showToast('👨‍💻 Certified engineers')">
-          <i class="fas fa-user-shield"></i><div><h4>Certified engineers</h4><p>CCNP, CISSP, and cloud–native experts.</p></div>
+          <i class="fas fa-user-shield"></i>
+          <div>
+            <h4>Certified Engineers</h4>
+            <p>CCNP, CISSP, and cloud–native experts. Our team holds top industry certifications to ensure quality service delivery.</p>
+          </div>
         </div>
         <div class="feature-item" onclick="showToast('📈 Proactive care')">
-          <i class="fas fa-chart-line"></i><div><h4>Proactive care</h4><p>We fix issues before they become incidents.</p></div>
+          <i class="fas fa-chart-line"></i>
+          <div>
+            <h4>Proactive Care</h4>
+            <p>We fix issues before they become incidents. Our predictive analytics help identify and resolve problems early.</p>
+          </div>
         </div>
         <div class="feature-item" onclick="showToast('🔄 Disaster recovery')">
-          <i class="fas fa-rotate-left"></i><div><h4>Disaster recovery</h4><p>Backup & restore plans with minimal downtime.</p></div>
+          <i class="fas fa-rotate-left"></i>
+          <div>
+            <h4>Disaster Recovery</h4>
+            <p>Backup & restore plans with minimal downtime. We ensure your business continuity with robust disaster recovery solutions.</p>
+          </div>
         </div>
       </div>
 
       <div id="testimonial-section" class="testimonial-box">
-        <blockquote><i class="fas fa-quote-left"></i> NetGuard cut our network incidents by 60% in the first quarter. Their support is unmatched.</blockquote>
+        <blockquote>
+          <i class="fas fa-quote-left"></i> NetGuard cut our network incidents by 60% in the first quarter. Their proactive approach and expert team have been instrumental in maintaining our infrastructure.
+        </blockquote>
         <div class="client" onclick="showToast('👤 Client: Jane Dawson, CTO')">
           <div class="client-avatar"><i class="fas fa-user"></i> JD</div>
-          <div class="client-info"><p>Jane Dawson</p><span>CTO, CloudNova</span></div>
+          <div class="client-info">
+            <p>Jane Dawson</p>
+            <span>CTO, CloudNova</span>
+          </div>
         </div>
       </div>
 
       <div id="cta-section" class="cta-section">
         <div>
-          <h2>Ready for professional support?</h2>
-          <p>Let's talk about your infrastructure — we'll build a custom plan.</p>
+          <h2>Ready for Professional Network Support?</h2>
+          <p>Let's talk about your infrastructure — we'll build a custom support plan tailored to your specific needs and business goals.</p>
         </div>
         <span class="cta-btn" onclick="showPage('consult')">
           <i class="fas fa-calendar-check"></i> Book a consultation
@@ -878,14 +1207,14 @@
           <a onclick="showPage('home')">Home</a> <span> / </span>
           <span style="color: #0b1a2b; font-weight: 500;">Book a consultation</span>
         </div>
-        <h1>Let's talk about your network</h1>
-        <p>Fill in the details and our team will reach out within 2 hours to schedule a deep-dive session.</p>
+        <h1>Let's Talk About Your Network</h1>
+        <p>Fill in the details and our team will reach out within 2 hours to schedule a deep-dive session. We'll analyze your current infrastructure and propose a customized support plan.</p>
       </div>
 
       <div class="form-section">
         <div class="form-main">
-          <h2>Schedule a consultation</h2>
-          <p class="sub">We'll customise a support plan for your infrastructure.</p>
+          <h2>Schedule a Consultation</h2>
+          <p class="sub">We'll customise a support plan for your infrastructure. All fields marked with * are required.</p>
 
           <form id="consultationForm" onsubmit="handleFormSubmit(event)">
             <div class="form-row">
@@ -912,11 +1241,11 @@
               <div class="form-group">
                 <label for="teamSize">Team size</label>
                 <select id="teamSize">
-                  <option value="1-10">1–10</option>
-                  <option value="11-50" selected>11–50</option>
-                  <option value="51-200">51–200</option>
-                  <option value="201-1000">201–1000</option>
-                  <option value="1000+">1000+</option>
+                  <option value="1-10">1–10 employees</option>
+                  <option value="11-50" selected>11–50 employees</option>
+                  <option value="51-200">51–200 employees</option>
+                  <option value="201-1000">201–1000 employees</option>
+                  <option value="1000+">1000+ employees</option>
                 </select>
               </div>
             </div>
@@ -935,12 +1264,12 @@
 
             <div class="form-group">
               <label for="message">Tell us about your infrastructure</label>
-              <textarea id="message" placeholder="Current setup, pain points, goals…"></textarea>
+              <textarea id="message" placeholder="Please describe your current network setup, any challenges you're facing, and what you hope to achieve with our support."></textarea>
             </div>
 
             <button type="submit" class="btn-primary"><i class="fas fa-calendar-check"></i> Book consultation</button>
             <p style="margin-top: 1rem; font-size: 0.85rem; color: #4a5e72;">
-              <i class="fas fa-lock" style="color: #0066ff;"></i> Your data is secure. We'll never share your information.
+              <i class="fas fa-lock" style="color: #0066ff;"></i> Your data is secure. We'll never share your information with third parties.
             </p>
           </form>
         </div>
@@ -948,8 +1277,8 @@
         <div class="form-side">
           <div class="info-card">
             <h4><i class="fas fa-clock"></i> Quick response</h4>
-            <p>We aim to reply within <strong>2 hours</strong> (business hours) and schedule your consultation within 24h.</p>
-            <div style="margin-top: 0.8rem;"><span class="badge-pill"><i class="fas fa-check"></i> 99% satisfaction</span></div>
+            <p>We aim to reply within <strong>2 hours</strong> (business hours) and schedule your consultation within 24h. Our team is ready to help you.</p>
+            <div style="margin-top: 0.8rem;"><span class="badge-pill"><i class="fas fa-check"></i> 99% satisfaction rate</span></div>
           </div>
 
           <div class="info-card">
@@ -959,9 +1288,12 @@
             <div class="contact-line"><i class="fas fa-comment"></i> Live chat (available 24/7)</div>
           </div>
 
-          <div class="info-card" style="background: #eef4ff; border-color: #d4e2ff;">
-            <h4 style="color: #0b1a2b;"><i class="fas fa-shield-halved" style="color: #0066ff;"></i> Why NetGuard?</h4>
-            <p>✦ Enterprise-grade SLAs<br>✦ Certified engineers (CCNP, CISSP)<br>✦ Proactive monitoring &amp; security</p>
+          <div class="info-card blue-card" style="background: #eef4ff; border-color: #d4e2ff;">
+            <h4 style="color: #0b1a2b;"><i class="fas fa-shield-halved" style="color: #0066ff;"></i> Why Choose NetGuard?</h4>
+            <p>✦ Enterprise-grade SLAs with 99.9% uptime guarantee<br>
+            ✦ Certified engineers (CCNP, CISSP, AWS, Azure)<br>
+            ✦ Proactive monitoring &amp; advanced security<br>
+            ✦ 24/7/365 support with rapid response times</p>
           </div>
         </div>
       </div>
@@ -974,7 +1306,7 @@
           <a href="#" class="logo" style="font-size: 1.4rem; text-decoration: none;" onclick="showPage('home')">
             <i class="fas fa-shield-halved"></i> NetGuard
           </a>
-          <p style="max-width: 220px;">Next–gen network support for enterprises and growing teams.</p>
+          <p style="max-width: 220px;">Next–gen network support for enterprises and growing teams. We're committed to keeping your infrastructure secure and always online.</p>
           <div class="footer-social">
             <i class="fab fa-linkedin" onclick="showToast('🔗 LinkedIn page')"></i>
             <i class="fab fa-twitter" onclick="showToast('🐦 Twitter / X')"></i>
@@ -983,14 +1315,14 @@
         </div>
         <div class="footer-col">
           <strong>Services</strong>
-          <a href="#" onclick="smoothScroll('services-section')">Monitoring</a>
-          <a href="#" onclick="smoothScroll('services-section')">Security</a>
-          <a href="#" onclick="smoothScroll('services-section')">Cloud</a>
-          <a href="#" onclick="smoothScroll('services-section')">Helpdesk</a>
+          <a href="#" onclick="smoothScroll('services-section')">Network Monitoring</a>
+          <a href="#" onclick="smoothScroll('services-section')">Security & Firewall</a>
+          <a href="#" onclick="smoothScroll('services-section')">Cloud & Hybrid</a>
+          <a href="#" onclick="smoothScroll('services-section')">24/7 Helpdesk</a>
         </div>
         <div class="footer-col">
           <strong>Company</strong>
-          <a href="#" onclick="showToast('🏢 About us')">About</a>
+          <a href="#" onclick="showToast('🏢 About us')">About Us</a>
           <a href="#" onclick="showToast('💼 Careers')">Careers</a>
           <a href="#" onclick="showToast('🤝 Partners')">Partners</a>
           <a href="#" onclick="showToast('📝 Blog')">Blog</a>
@@ -1003,7 +1335,7 @@
         </div>
       </div>
       <div class="footer-copy">
-        &copy; 2026 NetGuard. All rights reserved. <span style="color: #0066ff;">⚡</span> Professional network support.
+        &copy; 2026 NetGuard. All rights reserved. <span style="color: #0066ff;">⚡</span> Professional network support services.
       </div>
     </footer>
   </div>
@@ -1035,7 +1367,7 @@
       }, 100);
     }
 
-    // Page switching with Home link visibility control - no toast
+    // Page switching - no toast
     function showPage(page) {
       // Hide all pages
       document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
@@ -1043,12 +1375,8 @@
       // Show selected page
       if (page === 'home') {
         document.getElementById('page-home').classList.add('active');
-        // Hide Home link in nav when on home page
-        document.querySelector('.nav-home-link').classList.remove('visible');
       } else if (page === 'consult') {
         document.getElementById('page-consult').classList.add('active');
-        // Show Home link in nav when on consultation page
-        document.querySelector('.nav-home-link').classList.add('visible');
       }
       
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -1070,9 +1398,73 @@
       document.getElementById('consultationForm').reset();
     }
 
-    // Initialize: hide Home link on page load (home page is active by default)
+    // Dark/Light mode toggle with system preference support
+    function toggleTheme() {
+      const body = document.body;
+      const icon = document.getElementById('themeIcon');
+      
+      body.classList.toggle('dark-mode');
+      
+      if (body.classList.contains('dark-mode')) {
+        icon.className = 'fas fa-sun';
+        localStorage.setItem('theme', 'dark');
+      } else {
+        icon.className = 'fas fa-moon';
+        localStorage.setItem('theme', 'light');
+      }
+    }
+
+    // Initialize theme - checks localStorage first, then system preference
+    function initTheme() {
+      const icon = document.getElementById('themeIcon');
+      const savedTheme = localStorage.getItem('theme');
+      
+      // Check if user has previously set a preference
+      if (savedTheme) {
+        if (savedTheme === 'dark') {
+          document.body.classList.add('dark-mode');
+          icon.className = 'fas fa-sun';
+        } else {
+          icon.className = 'fas fa-moon';
+        }
+        return;
+      }
+      
+      // If no saved preference, check system preference
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (prefersDark) {
+        document.body.classList.add('dark-mode');
+        icon.className = 'fas fa-sun';
+        localStorage.setItem('theme', 'dark');
+      } else {
+        icon.className = 'fas fa-moon';
+        localStorage.setItem('theme', 'light');
+      }
+    }
+
+    // Listen for system theme changes
+    function listenForSystemThemeChanges() {
+      const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+      
+      mediaQuery.addEventListener('change', function(e) {
+        // Only change if user hasn't manually set a preference
+        if (!localStorage.getItem('theme')) {
+          const icon = document.getElementById('themeIcon');
+          if (e.matches) {
+            document.body.classList.add('dark-mode');
+            icon.className = 'fas fa-sun';
+          } else {
+            document.body.classList.remove('dark-mode');
+            icon.className = 'fas fa-moon';
+          }
+        }
+      });
+    }
+
+    // Initialize
     document.addEventListener('DOMContentLoaded', function() {
-      document.querySelector('.nav-home-link').classList.remove('visible');
+      initTheme();
+      listenForSystemThemeChanges();
       
       // Check if there's a hash in URL for smooth scrolling
       if (window.location.hash) {
