@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NetGuard · Network Support</title>
+  <!-- Font Awesome Icons (Free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400..700;1,14..32,400..700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      background-color: #f8fafc;
+      color: #0b1a2b;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* header / nav */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 0;
+      flex-wrap: wrap;
+      gap: 1rem;
+      border-bottom: 1px solid rgba(0, 20, 40, 0.06);
+      position: sticky;
+      top: 0;
+      background: rgba(248, 250, 252, 0.92);
+      backdrop-filter: blur(8px);
+      z-index: 100;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 700;
+      font-size: 1.6rem;
+      letter-spacing: -0.02em;
+      cursor: pointer;
+      text-decoration: none;
+      color: #0b1a2b;
+    }
+
+    .logo i {
+      color: #0066ff;
+      font-size: 2rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+      align-items: center;
+      flex-wrap: wrap;
+      font-weight: 500;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #1e2f40;
+      transition: color 0.2s;
+      font-size: 1rem;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .nav-links a:hover {
+      color: #0066ff;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #0066ff;
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* Home link - hidden by default on home page, shown on consultation page */
+    .nav-home-link {
+      display: none;
+    }
+    .nav-home-link.visible {
+      display: inline-block;
+    }
+
+    .btn-outline {
+      border: 1.5px solid #0066ff;
+      padding: 0.5rem 1.2rem;
+      border-radius: 40px;
+      color: #0066ff;
+      background: transparent;
+      font-weight: 600;
+      transition: 0.2s;
+      cursor: pointer;
+      display: inline-block;
+      text-decoration: none;
+    }
+
+    .btn-outline:hover {
+      background: #0066ff;
+      color: white;
+    }
+
+    /* Section IDs for scrolling */
+    #home-section {
+      scroll-margin-top: 80px;
+    }
+    #services-section {
+      scroll-margin-top: 80px;
+    }
+    #features-section {
+      scroll-margin-top: 80px;
+    }
+    #testimonial-section {
+      scroll-margin-top: 80px;
+    }
+    #cta-section {
+      scroll-margin-top: 80px;
+    }
+
+    /* hero */
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 3.5rem 0 4rem;
+      gap: 2.5rem;
+    }
+
+    .hero-content {
+      flex: 1 1 480px;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: #e6f0ff;
+      color: #0066ff;
+      font-weight: 600;
+      padding: 0.3rem 1rem;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      letter-spacing: 0.3px;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-content h1 {
+      font-size: 3.2rem;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-content h1 span {
+      color: #0066ff;
+    }
+
+    .hero-content p {
+      font-size: 1.15rem;
+      color: #2c4058;
+      max-width: 500px;
+      margin-bottom: 2rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .btn-primary {
+      background: #0066ff;
+      border: none;
+      padding: 0.8rem 2.2rem;
+      border-radius: 60px;
+      font-weight: 600;
+      color: white;
+      font-size: 1rem;
+      box-shadow: 0 8px 20px rgba(0, 102, 255, 0.25);
+      transition: 0.2s;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      text-decoration: none;
+    }
+
+    .btn-primary i {
+      font-size: 0.9rem;
+    }
+
+    .btn-primary:hover {
+      background: #0052cc;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(0, 102, 255, 0.3);
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 2.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .stat-item h3 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #0b1a2b;
+    }
+
+    .stat-item p {
+      font-size: 0.9rem;
+      color: #4a5e72;
+    }
+
+    .hero-visual {
+      flex: 1 1 380px;
+      background: linear-gradient(145deg, #eef4ff, #ffffff);
+      padding: 2rem 1.5rem;
+      border-radius: 48px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08);
+      text-align: center;
+      border: 1px solid rgba(0, 102, 255, 0.05);
+    }
+
+    .hero-visual i {
+      font-size: 6rem;
+      color: #0066ff;
+      opacity: 0.7;
+      margin-bottom: 1rem;
+    }
+
+    .hero-visual h4 {
+      font-weight: 600;
+      font-size: 1.3rem;
+      color: #0b1a2b;
+    }
+
+    .hero-visual p {
+      color: #3e5770;
+      font-size: 0.95rem;
+    }
+
+    .section-title {
+      text-align: center;
+      margin: 3.5rem 0 2.5rem;
+    }
+
+    .section-title h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .section-title p {
+      color: #3e5770;
+      max-width: 540px;
+      margin: 0.5rem auto 0;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0 3rem;
+    }
+
+    .service-card {
+      background: white;
+      padding: 2rem 1.8rem;
+      border-radius: 32px;
+      box-shadow: 0 8px 28px rgba(0, 20, 40, 0.03);
+      transition: 0.25s ease;
+      border: 1px solid rgba(0, 0, 0, 0.02);
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px -12px rgba(0, 102, 255, 0.12);
+      border-color: #dbe8ff;
+    }
+
+    .service-icon {
+      background: #eef4ff;
+      width: 70px;
+      height: 70px;
+      border-radius: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      color: #0066ff;
+      font-size: 2rem;
+    }
+
+    .service-card h3 {
+      font-weight: 700;
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .service-card p {
+      color: #3e5770;
+      font-size: 0.95rem;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0 3rem;
+    }
+
+    .feature-item {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      background: white;
+      padding: 1.8rem 1.5rem;
+      border-radius: 28px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
+      border: 1px solid #f0f4fe;
+      cursor: pointer;
+    }
+
+    .feature-item i {
+      font-size: 2rem;
+      color: #0066ff;
+      min-width: 2.5rem;
+    }
+
+    .feature-item h4 {
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .feature-item p {
+      color: #3e5770;
+      font-size: 0.9rem;
+    }
+
+    .testimonial-box {
+      background: white;
+      border-radius: 40px;
+      padding: 3rem 2.5rem;
+      margin: 3rem 0 2rem;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.02);
+      border: 1px solid #eef4fe;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .testimonial-box blockquote {
+      font-size: 1.25rem;
+      font-weight: 500;
+      max-width: 600px;
+      color: #0b1a2b;
+    }
+
+    .testimonial-box blockquote i {
+      color: #0066ff;
+      margin-right: 0.3rem;
+    }
+
+    .testimonial-box .client {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      cursor: pointer;
+    }
+
+    .client-avatar {
+      background: #0066ff10;
+      border-radius: 60px;
+      padding: 0.7rem 1rem;
+      font-weight: 600;
+      color: #0066ff;
+      border: 1px solid #dbe8ff;
+    }
+
+    .client-info p {
+      font-weight: 500;
+    }
+
+    .client-info span {
+      color: #4a5e72;
+      font-size: 0.9rem;
+    }
+
+    .cta-section {
+      background: #0b1a2b;
+      color: white;
+      border-radius: 56px;
+      padding: 4rem 3rem;
+      margin: 3rem 0 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .cta-section h2 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .cta-section p {
+      opacity: 0.7;
+      max-width: 440px;
+      margin-top: 0.5rem;
+    }
+
+    .cta-btn {
+      background: white;
+      color: #0b1a2b;
+      border: none;
+      padding: 0.9rem 2.5rem;
+      border-radius: 60px;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: 0.2s;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      text-decoration: none;
+    }
+
+    .cta-btn i {
+      color: #0066ff;
+    }
+
+    .cta-btn:hover {
+      transform: scale(1.02);
+      background: #f0f5ff;
+    }
+
+    /* Consultation page styles */
+    .page-header {
+      padding: 2.5rem 0 1.5rem;
+    }
+
+    .page-header h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+
+    .page-header p {
+      font-size: 1.15rem;
+      color: #2c4058;
+      max-width: 600px;
+    }
+
+    .breadcrumb {
+      display: flex;
+      gap: 0.5rem;
+      color: #4a5e72;
+      font-size: 0.9rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .breadcrumb a {
+      color: #0066ff;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
+
+    .form-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3rem;
+      padding: 2rem 0 4rem;
+    }
+
+    .form-main {
+      flex: 2 1 480px;
+      background: white;
+      padding: 2.5rem 2.5rem 2.8rem;
+      border-radius: 40px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.02);
+      border: 1px solid #eef4fe;
+    }
+
+    .form-main h2 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+
+    .form-main .sub {
+      color: #4a5e72;
+      margin-bottom: 2rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 0.4rem;
+      color: #0b1a2b;
+    }
+
+    .form-group label .required {
+      color: #e53e3e;
+      margin-left: 0.2rem;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.8rem 1.2rem;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 30px;
+      font-family: "Inter", sans-serif;
+      font-size: 1rem;
+      transition: 0.2s;
+      background: #fafcff;
+      color: #0b1a2b;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #0066ff;
+      box-shadow: 0 0 0 4px rgba(0, 102, 255, 0.08);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+      border-radius: 24px;
+    }
+
+    .form-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .form-row .form-group {
+      flex: 1 1 180px;
+    }
+
+    .form-side {
+      flex: 1 1 260px;
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+    }
+
+    .info-card {
+      background: white;
+      padding: 1.8rem 1.8rem;
+      border-radius: 32px;
+      border: 1px solid #eef4fe;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
+    }
+
+    .info-card h4 {
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .info-card h4 i {
+      color: #0066ff;
+    }
+
+    .info-card p {
+      color: #3e5770;
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .info-card .contact-line {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: #0b1a2b;
+      font-weight: 500;
+      margin-top: 0.6rem;
+    }
+
+    .info-card .contact-line i {
+      color: #0066ff;
+      width: 1.4rem;
+    }
+
+    .badge-pill {
+      background: #e6f0ff;
+      color: #0066ff;
+      padding: 0.2rem 1rem;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      display: inline-block;
+    }
+
+    /* footer */
+    .footer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 2.5rem 0 1.5rem;
+      border-top: 1px solid rgba(0, 0, 0, 0.04);
+      margin-top: 2rem;
+      gap: 2rem;
+    }
+
+    .footer-col {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .footer-col p, .footer-col a {
+      color: #3e5770;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+
+    .footer-col a:hover {
+      color: #0066ff;
+    }
+
+    .footer-social i {
+      font-size: 1.4rem;
+      margin-right: 1rem;
+      color: #2c4058;
+      transition: 0.2s;
+      cursor: pointer;
+    }
+
+    .footer-social i:hover {
+      color: #0066ff;
+    }
+
+    .footer-copy {
+      text-align: center;
+      padding: 1.5rem 0 0.5rem;
+      font-size: 0.85rem;
+      color: #4a5e72;
+      border-top: 1px solid rgba(0,0,0,0.03);
+    }
+
+    .toast-message {
+      position: fixed;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%) translateY(80px);
+      background: #0b1a2b;
+      color: white;
+      padding: 0.8rem 2rem;
+      border-radius: 60px;
+      font-weight: 500;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+      opacity: 0;
+      transition: 0.3s ease;
+      pointer-events: none;
+      z-index: 999;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .toast-message.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .page {
+      display: none;
+    }
+    .page.active {
+      display: block;
+    }
+
+    /* Scroll indicator */
+    .scroll-indicator {
+      display: inline-block;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+      40% { transform: translateY(-10px); }
+      60% { transform: translateY(-5px); }
+    }
+
+    @media (max-width: 700px) {
+      .hero-content h1 { font-size: 2.6rem; }
+      .page-header h1 { font-size: 2.2rem; }
+      .form-main { padding: 1.8rem; }
+      .navbar { flex-direction: column; align-items: flex-start; }
+      .nav-links { gap: 1rem; }
+      .form-row { flex-direction: column; }
+      .cta-section { flex-direction: column; text-align: center; padding: 3rem 1.5rem; }
+      .testimonial-box { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Toast - only for form submissions now -->
+  <div id="toast" class="toast-message">
+    <i class="fas fa-check-circle" style="color: #4caf50;"></i>
+    <span id="toastText">Action triggered</span>
+  </div>
+
+  <div class="container">
+
+    <!-- Navigation -->
+    <nav class="navbar">
+      <a href="#" class="logo" onclick="showPage('home')">
+        <i class="fas fa-shield-halved"></i>
+        <span>NetGuard</span>
+      </a>
+      <div class="nav-links">
+        <!-- Home link - hidden on home page, shown on consultation page -->
+        <a class="nav-home-link" onclick="showPage('home')"><i class="fas fa-home"></i> Home</a>
+        <a href="#home-section" onclick="smoothScroll('home-section')">Home</a>
+        <a href="#services-section" onclick="smoothScroll('services-section')">Services</a>
+        <a href="#features-section" onclick="smoothScroll('features-section')">Features</a>
+        <a href="#testimonial-section" onclick="smoothScroll('testimonial-section')">Testimonials</a>
+        <a href="#cta-section" onclick="smoothScroll('cta-section')">Contact</a>
+        <span class="btn-outline" onclick="showToast('📞 24/7 Help desk')"><i class="fas fa-headset"></i> 24/7 Help</span>
+      </div>
+    </nav>
+
+    <!-- ========== HOME PAGE ========== -->
+    <div id="page-home" class="page active">
+      <section id="home-section" class="hero">
+        <div class="hero-content">
+          <span class="hero-badge"><i class="fas fa-circle-check"></i> Trusted network partner</span>
+          <h1>Enterprise–grade <span>Network Support</span> for modern teams</h1>
+          <p>Proactive monitoring, rapid incident response, and expert guidance — keep your infrastructure always online.</p>
+          <div class="hero-actions">
+            <span class="btn-primary" onclick="showToast('🚀 Getting started with NetGuard')"><i class="fas fa-arrow-right"></i> Get started</span>
+            <span style="display: flex; align-items: center; gap: 0.5rem; font-weight: 500; color: #0b1a2b; cursor: pointer;" onclick="showToast('▶️ Watch demo video')">
+              <i class="fas fa-play-circle" style="color: #0066ff; font-size: 1.8rem;"></i> See how
+            </span>
+          </div>
+          <div class="hero-stats">
+            <div class="stat-item"><h3>99.9%</h3><p>Uptime SLA</p></div>
+            <div class="stat-item"><h3>&lt; 15min</h3><p>Avg. response</p></div>
+            <div class="stat-item"><h3>2k+</h3><p>Devices managed</p></div>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <i class="fas fa-network-wired"></i>
+          <h4>Always–on support</h4>
+          <p>24/7 NOC, on–site & remote assistance</p>
+          <div style="margin-top: 1rem; display: flex; justify-content: center; gap: 0.8rem; font-size: 0.8rem; color: #0066ff;">
+            <span><i class="fas fa-check-circle"></i> Monitoring</span>
+            <span><i class="fas fa-check-circle"></i> Security</span>
+          </div>
+          <div style="margin-top: 1.5rem;">
+            <span class="scroll-indicator" style="color: #0066ff; font-size: 0.8rem;">
+              <i class="fas fa-chevron-down"></i> Scroll to explore
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <div id="services-section" class="section-title"><h2>Core support services</h2><p>From routine maintenance to emergency response — we cover every layer.</p></div>
+      <div class="services-grid">
+        <div class="service-card" onclick="showToast('📡 Network monitoring details')">
+          <div class="service-icon"><i class="fas fa-satellite-dish"></i></div>
+          <h3>Network monitoring</h3><p>Real–time visibility, predictive alerts, and performance dashboards.</p>
+        </div>
+        <div class="service-card" onclick="showToast('🛡️ Security & firewall services')">
+          <div class="service-icon"><i class="fas fa-shield"></i></div>
+          <h3>Security & firewall</h3><p>Threat prevention, VPN management, and zero–trust policies.</p>
+        </div>
+        <div class="service-card" onclick="showToast('☁️ Cloud & hybrid solutions')">
+          <div class="service-icon"><i class="fas fa-cloud-upload-alt"></i></div>
+          <h3>Cloud & hybrid</h3><p>AWS, Azure, GCP integration with seamless hybrid connectivity.</p>
+        </div>
+        <div class="service-card" onclick="showToast('🎧 24/7 helpdesk support')">
+          <div class="service-icon"><i class="fas fa-headset"></i></div>
+          <h3>24/7 helpdesk</h3><p>Multi–tier support with quick escalation and expert engineers.</p>
+        </div>
+      </div>
+
+      <div id="features-section" class="section-title"><h2>Built for reliability</h2><p>We combine deep expertise with a customer–first approach.</p></div>
+      <div class="features-grid">
+        <div class="feature-item" onclick="showToast('⚡ Rapid response: < 5 min')">
+          <i class="fas fa-clock"></i><div><h4>Rapid response</h4><p>Average time to acknowledge &lt; 5 minutes.</p></div>
+        </div>
+        <div class="feature-item" onclick="showToast('👨‍💻 Certified engineers')">
+          <i class="fas fa-user-shield"></i><div><h4>Certified engineers</h4><p>CCNP, CISSP, and cloud–native experts.</p></div>
+        </div>
+        <div class="feature-item" onclick="showToast('📈 Proactive care')">
+          <i class="fas fa-chart-line"></i><div><h4>Proactive care</h4><p>We fix issues before they become incidents.</p></div>
+        </div>
+        <div class="feature-item" onclick="showToast('🔄 Disaster recovery')">
+          <i class="fas fa-rotate-left"></i><div><h4>Disaster recovery</h4><p>Backup & restore plans with minimal downtime.</p></div>
+        </div>
+      </div>
+
+      <div id="testimonial-section" class="testimonial-box">
+        <blockquote><i class="fas fa-quote-left"></i> NetGuard cut our network incidents by 60% in the first quarter. Their support is unmatched.</blockquote>
+        <div class="client" onclick="showToast('👤 Client: Jane Dawson, CTO')">
+          <div class="client-avatar"><i class="fas fa-user"></i> JD</div>
+          <div class="client-info"><p>Jane Dawson</p><span>CTO, CloudNova</span></div>
+        </div>
+      </div>
+
+      <div id="cta-section" class="cta-section">
+        <div>
+          <h2>Ready for professional support?</h2>
+          <p>Let's talk about your infrastructure — we'll build a custom plan.</p>
+        </div>
+        <span class="cta-btn" onclick="showPage('consult')">
+          <i class="fas fa-calendar-check"></i> Book a consultation
+        </span>
+      </div>
+    </div>
+
+    <!-- ========== CONSULTATION PAGE ========== -->
+    <div id="page-consult" class="page">
+      <div class="page-header">
+        <div class="breadcrumb">
+          <a onclick="showPage('home')">Home</a> <span> / </span>
+          <span style="color: #0b1a2b; font-weight: 500;">Book a consultation</span>
+        </div>
+        <h1>Let's talk about your network</h1>
+        <p>Fill in the details and our team will reach out within 2 hours to schedule a deep-dive session.</p>
+      </div>
+
+      <div class="form-section">
+        <div class="form-main">
+          <h2>Schedule a consultation</h2>
+          <p class="sub">We'll customise a support plan for your infrastructure.</p>
+
+          <form id="consultationForm" onsubmit="handleFormSubmit(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fullName">Full name <span class="required">*</span></label>
+                <input type="text" id="fullName" placeholder="e.g. Alex Rivera" required>
+              </div>
+              <div class="form-group">
+                <label for="company">Company name</label>
+                <input type="text" id="company" placeholder="Your company">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Work email <span class="required">*</span></label>
+              <input type="email" id="email" placeholder="alex@company.com" required>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone">Phone number</label>
+                <input type="tel" id="phone" placeholder="+1 (555) 000-9999">
+              </div>
+              <div class="form-group">
+                <label for="teamSize">Team size</label>
+                <select id="teamSize">
+                  <option value="1-10">1–10</option>
+                  <option value="11-50" selected>11–50</option>
+                  <option value="51-200">51–200</option>
+                  <option value="201-1000">201–1000</option>
+                  <option value="1000+">1000+</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="interest">What are you looking for? <span class="required">*</span></label>
+              <select id="interest" required>
+                <option value="">Select an option</option>
+                <option value="monitoring">Network monitoring & alerts</option>
+                <option value="security">Security & firewall review</option>
+                <option value="cloud">Cloud / hybrid migration</option>
+                <option value="helpdesk">24/7 helpdesk support</option>
+                <option value="custom">Custom managed services</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Tell us about your infrastructure</label>
+              <textarea id="message" placeholder="Current setup, pain points, goals…"></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary"><i class="fas fa-calendar-check"></i> Book consultation</button>
+            <p style="margin-top: 1rem; font-size: 0.85rem; color: #4a5e72;">
+              <i class="fas fa-lock" style="color: #0066ff;"></i> Your data is secure. We'll never share your information.
+            </p>
+          </form>
+        </div>
+
+        <div class="form-side">
+          <div class="info-card">
+            <h4><i class="fas fa-clock"></i> Quick response</h4>
+            <p>We aim to reply within <strong>2 hours</strong> (business hours) and schedule your consultation within 24h.</p>
+            <div style="margin-top: 0.8rem;"><span class="badge-pill"><i class="fas fa-check"></i> 99% satisfaction</span></div>
+          </div>
+
+          <div class="info-card">
+            <h4><i class="fas fa-headset"></i> Direct contact</h4>
+            <div class="contact-line"><i class="fas fa-phone"></i> +1 (800) 555‑NET</div>
+            <div class="contact-line"><i class="fas fa-envelope"></i> consult@netguard.io</div>
+            <div class="contact-line"><i class="fas fa-comment"></i> Live chat (available 24/7)</div>
+          </div>
+
+          <div class="info-card" style="background: #eef4ff; border-color: #d4e2ff;">
+            <h4 style="color: #0b1a2b;"><i class="fas fa-shield-halved" style="color: #0066ff;"></i> Why NetGuard?</h4>
+            <p>✦ Enterprise-grade SLAs<br>✦ Certified engineers (CCNP, CISSP)<br>✦ Proactive monitoring &amp; security</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer">
+        <div class="footer-col">
+          <a href="#" class="logo" style="font-size: 1.4rem; text-decoration: none;" onclick="showPage('home')">
+            <i class="fas fa-shield-halved"></i> NetGuard
+          </a>
+          <p style="max-width: 220px;">Next–gen network support for enterprises and growing teams.</p>
+          <div class="footer-social">
+            <i class="fab fa-linkedin" onclick="showToast('🔗 LinkedIn page')"></i>
+            <i class="fab fa-twitter" onclick="showToast('🐦 Twitter / X')"></i>
+            <i class="fab fa-github" onclick="showToast('🐙 GitHub')"></i>
+          </div>
+        </div>
+        <div class="footer-col">
+          <strong>Services</strong>
+          <a href="#" onclick="smoothScroll('services-section')">Monitoring</a>
+          <a href="#" onclick="smoothScroll('services-section')">Security</a>
+          <a href="#" onclick="smoothScroll('services-section')">Cloud</a>
+          <a href="#" onclick="smoothScroll('services-section')">Helpdesk</a>
+        </div>
+        <div class="footer-col">
+          <strong>Company</strong>
+          <a href="#" onclick="showToast('🏢 About us')">About</a>
+          <a href="#" onclick="showToast('💼 Careers')">Careers</a>
+          <a href="#" onclick="showToast('🤝 Partners')">Partners</a>
+          <a href="#" onclick="showToast('📝 Blog')">Blog</a>
+        </div>
+        <div class="footer-col">
+          <strong>Support</strong>
+          <a href="#" onclick="showToast('📞 +1 (800) 555‑NET')"><i class="fas fa-phone"></i> +1 (800) 555‑NET</a>
+          <a href="#" onclick="showToast('✉️ support@netguard.io')"><i class="fas fa-envelope"></i> support@netguard.io</a>
+          <a href="#" onclick="showToast('💬 Live chat')"><i class="fas fa-comment"></i> Live chat</a>
+        </div>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 NetGuard. All rights reserved. <span style="color: #0066ff;">⚡</span> Professional network support.
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Toast notification - only for form submissions and non-navigation actions
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      const toastText = document.getElementById('toastText');
+      toastText.textContent = message;
+      toast.classList.add('show');
+      if (window.toastTimeout) clearTimeout(window.toastTimeout);
+      window.toastTimeout = setTimeout(() => {
+        toast.classList.remove('show');
+      }, 2200);
+    }
+
+    // Smooth scroll to section - no toast notification
+    function smoothScroll(sectionId) {
+      // First, ensure we're on the home page
+      showPage('home');
+      
+      // Small delay to allow page to render
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    }
+
+    // Page switching with Home link visibility control - no toast
+    function showPage(page) {
+      // Hide all pages
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      
+      // Show selected page
+      if (page === 'home') {
+        document.getElementById('page-home').classList.add('active');
+        // Hide Home link in nav when on home page
+        document.querySelector('.nav-home-link').classList.remove('visible');
+      } else if (page === 'consult') {
+        document.getElementById('page-consult').classList.add('active');
+        // Show Home link in nav when on consultation page
+        document.querySelector('.nav-home-link').classList.add('visible');
+      }
+      
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Handle form submission - shows toast only for form validation
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('fullName').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const interest = document.getElementById('interest').value;
+
+      if (!name || !email || !interest) {
+        showToast('⚠️ Please fill in all required fields.');
+        return;
+      }
+
+      showToast('✅ Consultation booked! We\'ll reach out within 2 hours.');
+      document.getElementById('consultationForm').reset();
+    }
+
+    // Initialize: hide Home link on page load (home page is active by default)
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelector('.nav-home-link').classList.remove('visible');
+      
+      // Check if there's a hash in URL for smooth scrolling
+      if (window.location.hash) {
+        const hash = window.location.hash.replace('#', '');
+        setTimeout(() => {
+          const element = document.getElementById(hash);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }, 300);
+      }
+    });
+  </script>
+</body>
+</html>
